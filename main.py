@@ -9,9 +9,10 @@ from sklearn.model_selection import train_test_split
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    heart_data = pd.read_csv("data/heart_disease_data.csv")
+def logisticsRegression(dataPath: str):
+    heart_data = pd.read_csv(dataPath)
     # checking the missing values: -- no missing values in or data --
     print(heart_data.isnull().sum())
     # statistical information about data
