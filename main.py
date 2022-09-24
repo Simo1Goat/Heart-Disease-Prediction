@@ -31,6 +31,6 @@ def logisticsRegression(dataPath: str):
     train_accuracy = accuracy_score(training_data_accuracy, Y_train)
     # accuracy score on the testing data
     testing_data_accuracy = model.predict(X_test)
-    test_accuracy = accuracy_score(testing_data_accuracy, Y_test)
+    test_accuracy = round(accuracy_score(testing_data_accuracy, Y_test) * 100, 2)
     print(f'train_accuracy {train_accuracy}, testing accuracy {test_accuracy}')
     return test_accuracy
