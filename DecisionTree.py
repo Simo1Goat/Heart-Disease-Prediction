@@ -5,7 +5,7 @@ import pandas as pd
 
 
 def Decision_Tree_Classifier(dataPath: str):
-    epoch = None
+    best_epoch = 0
     max_accuracy = 0
     epochs = 200
     heart_data = pd.read_csv(dataPath)
@@ -21,7 +21,7 @@ def Decision_Tree_Classifier(dataPath: str):
             max_accuracy = current_accuracy
             best_epoch = epoch
 
-    print(f'the percentage of accuracy achieved using Decision tree is {str(max_accuracy)} % ==> epoch {str(epoch)}')
+    print(f'the percentage of accuracy achieved using Decision tree is {str(max_accuracy)} % ==> epoch {str(best_epoch)}')
     return max_accuracy
 
 
