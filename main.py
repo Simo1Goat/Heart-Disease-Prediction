@@ -6,8 +6,6 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.model_selection import train_test_split
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 
 # Press the green button in the gutter to run the script.
@@ -35,11 +33,4 @@ def logisticsRegression(dataPath: str):
     testing_data_accuracy = model.predict(X_test)
     test_accuracy = accuracy_score(testing_data_accuracy, Y_test)
     print(f'train_accuracy {train_accuracy}, testing accuracy {test_accuracy}')
-    # confusion matrix to check the accuracy of the predicted test:
-    cm_test = confusion_matrix(testing_data_accuracy, Y_test)
-    sns.heatmap(cm_test, cmap="Greens", annot=True,
-                cbar_kws={"orientation": "vertical", "label": "degree of accuracy"},
-                xticklabels=[0, 1], yticklabels=[0, 1])
-    plt.xlabel("Predicted")
-    plt.ylabel("Actual")
-    plt.show()
+    return test_accuracy
